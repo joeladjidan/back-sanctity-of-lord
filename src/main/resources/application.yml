@@ -1,0 +1,68 @@
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/sanctityoflorddb?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  ## Specify DBMS
+  jpa:
+    database: MYSQL
+    show-sql: false
+    properties:
+      hibernate:
+        session_factory:
+          interceptor: com.joeladjidan.sanctityoflord.interceptor.Interceptor
+
+    # Hibernate DDL Auto (create, create-drop, update)
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+flickr:
+  apiKey: e6017aef7bebeffc113de04efec554b4
+  apiSecret: a2e10f69ece5c67c
+  appKey: 72157718699655397-a36ae267891db7e7
+  appSecret: 04e870e57e18c55b
+
+
+jwt:
+  header: Authorization
+  secret: secret
+  jwtExpirationInMs: 18000000
+  refreshExpirationDateInMs: 600000000
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+reflectoring:
+  trace: true
+  messages:
+    basename: lang/res
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+ # https://frontbackend.com/spring-boot/spring-boot-upload-file-to-filesystem
+servlet:
+   multipart:
+     enabled: 'true'
+     max-request-size: 215MB
+     file-size-threshold: 2KB
+     max-file-size: 200MB
+
+logging:
+   level:
+     org:
+       hibernate:
+         SQL:
+           INFO
+         TYPE:
+           TRACE
+
