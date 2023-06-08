@@ -1,14 +1,20 @@
 package com.joeladjidan.sanctityoflord.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.joeladjidan.sanctityoflord.model.Emission;
 import lombok.Builder;
 import lombok.Data;
+import lombok.extern.jackson.Jacksonized;
+
 import java.util.Date;
 
 @Data
 @Builder
+@Jacksonized //missing
+@JsonPOJOBuilder
 public class EmissionDto {
 
+  private Integer id;
   private String description;
   private Date dateEmission;
   private DonneeDto donnee;
@@ -19,6 +25,7 @@ public class EmissionDto {
         return null;
     }
     return EmissionDto.builder()
+        .id(emission.getId())
         .description(emission.getDescription())
         .dateEmission(emission.getDateEmission())
         .donnee(DonneeDto.fromEntity(emission.getDonnee()))
@@ -31,7 +38,7 @@ public class EmissionDto {
         return null;
     }
     Emission emission = new Emission();
-    emission.setDescription(dto.getDescription());
+    emission.setId(dto.getId());
     emission.setDateEmission(dto.getDateEmission());
     emission.setDonnee(DonneeDto.toEntity(dto.getDonnee()));
     emission.setTypeEmission(TypeEmissionDto.toEntity(dto.getTypeEmission()));

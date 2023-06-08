@@ -5,21 +5,22 @@ import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 import static com.joeladjidan.sanctityoflord.utils.Constants.TYPE_ENSEIGNEMENT_ENDPOINT;
 
 @Api("type-enseignement")
 public interface TypeEnseignementApi {
 
-  @PostMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/create")
+  @PostMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/enregistrer")
   TypeEnseignementDto save(@RequestBody TypeEnseignementDto dto);
 
-  @GetMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/{idTypeEnseignement}")
-  TypeEnseignementDto findById(@PathVariable("idTypeEnseignement") Integer id);
+  @GetMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/{id}")
+  TypeEnseignementDto findById(@PathVariable("id") Integer id);
 
-  @GetMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/all")
+  @GetMapping(value = TYPE_ENSEIGNEMENT_ENDPOINT + "/tous", produces="application/json")
   List<TypeEnseignementDto> findAll();
 
-  @DeleteMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/delete/{idTypeEnseignement}")
-  void delete(@PathVariable("idTypeEnseignement") Integer id);
+  @DeleteMapping(TYPE_ENSEIGNEMENT_ENDPOINT + "/supprimer/{id}")
+  void delete(@PathVariable("id") Integer id);
 
 }

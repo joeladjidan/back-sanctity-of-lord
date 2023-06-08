@@ -1,7 +1,5 @@
 package com.joeladjidan.sanctityoflord.config;
 
-import java.util.Collections;
-import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -12,6 +10,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.Collections;
+import java.util.List;
 
 @Configuration
 @EnableSwagger2
@@ -42,7 +43,7 @@ public class SwaggerConfiguration {
                 "Some custom description of API.", //description
                 "Version 1.0", //version
                 "Terms of service", //terms of service URL
-                new Contact("Joel ADJIDAN", "xxxxxxxxxxxx", "joeladjidan@gmail.com"),
+                new Contact("Joel ADJIDAN", "0650599343", "joeladjidan@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 

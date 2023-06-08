@@ -1,13 +1,18 @@
 package com.joeladjidan.sanctityoflord.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.joeladjidan.sanctityoflord.model.TypeEnseignement;
 import lombok.Builder;
 import lombok.Data;
+import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
+@Jacksonized //missing
+@JsonPOJOBuilder
 public class TypeEnseignementDto {
 
+  private int id;
   private String intitule;
   private String description;
 
@@ -17,6 +22,7 @@ public class TypeEnseignementDto {
     }
 
     return TypeEnseignementDto.builder()
+        .id(typeEnseignement.getId())
         .intitule(typeEnseignement.getIntitule())
         .description(typeEnseignement.getDescription())
         .build();
@@ -27,6 +33,7 @@ public class TypeEnseignementDto {
         return null;
     }
     TypeEnseignement typeEnseignement = new TypeEnseignement();
+      typeEnseignement.setId(dto.getId());
       typeEnseignement.setIntitule(dto.getIntitule());
       typeEnseignement.setDescription(dto.getDescription());
       return typeEnseignement;

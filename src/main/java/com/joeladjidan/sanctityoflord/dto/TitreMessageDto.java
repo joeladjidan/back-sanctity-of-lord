@@ -1,16 +1,18 @@
 package com.joeladjidan.sanctityoflord.dto;
 
-import com.joeladjidan.sanctityoflord.model.Enseignement;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.joeladjidan.sanctityoflord.model.TitreMessage;
 import lombok.Builder;
 import lombok.Data;
-
-import javax.persistence.Column;
+import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
+@Jacksonized //missing
+@JsonPOJOBuilder
 public class TitreMessageDto {
 
+  private int id;
   private String intitule;
   private String description;
 
@@ -20,6 +22,7 @@ public class TitreMessageDto {
     }
 
     return TitreMessageDto.builder()
+        .id(titreMessage.getId())
         .intitule(titreMessage.getIntitule())
         .description(titreMessage.getDescription())
         .build();
@@ -30,6 +33,7 @@ public class TitreMessageDto {
         return null;
     }
     TitreMessage titreMessage = new TitreMessage();
+     titreMessage.setId(dto.getId());
      titreMessage.setIntitule(dto.getIntitule());
      titreMessage.setDescription(dto.getDescription());
     return titreMessage;

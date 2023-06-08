@@ -1,7 +1,6 @@
 package com.joeladjidan.sanctityoflord.services;
 
 import com.joeladjidan.sanctityoflord.dto.ArchivreDto;
-import com.joeladjidan.sanctityoflord.dto.EmissionDto;
 
 import java.util.List;
 
@@ -14,4 +13,7 @@ public interface ArchivreService {
   List<ArchivreDto> findAll();
 
   void delete(Integer id);
+
+  List<ArchivreDto> findByMoisIntituleAndAnneeIntitule(String mois  , String annee);
+
 }

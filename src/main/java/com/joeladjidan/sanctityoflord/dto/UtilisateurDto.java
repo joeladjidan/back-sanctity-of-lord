@@ -1,13 +1,12 @@
 package com.joeladjidan.sanctityoflord.dto;
 
-import java.time.Instant;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.joeladjidan.sanctityoflord.model.Utilisateur;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -37,7 +36,7 @@ public class UtilisateurDto {
 
   public static UtilisateurDto fromEntity(Utilisateur utilisateur) {
     if (utilisateur == null) {
-      return null;
+        return null;
     }
 
     return UtilisateurDto.builder()
@@ -50,7 +49,7 @@ public class UtilisateurDto {
         .dateDeNaissance(utilisateur.getDateDeNaissance())
         .adresse(AdresseDto.fromEntity(utilisateur.getAdresse()))
         .photo(utilisateur.getPhoto())
-    //    .entreprise(EntrepriseDto.fromEntity(utilisateur.getEntreprise()))
+        .entreprise(EntrepriseDto.fromEntity(utilisateur.getEntreprise()))
         .roles(
             utilisateur.getRoles() != null ?
                 utilisateur.getRoles().stream()

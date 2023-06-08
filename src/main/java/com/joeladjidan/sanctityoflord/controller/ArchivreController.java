@@ -2,15 +2,15 @@ package com.joeladjidan.sanctityoflord.controller;
 
 import com.joeladjidan.sanctityoflord.controller.api.ArchivreApi;
 import com.joeladjidan.sanctityoflord.dto.ArchivreDto;
-import com.joeladjidan.sanctityoflord.dto.EmissionDto;
 import com.joeladjidan.sanctityoflord.services.ArchivreService;
-import com.joeladjidan.sanctityoflord.services.EmissionService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@Slf4j
 public class ArchivreController implements ArchivreApi {
 
   private ArchivreService archivreService;
@@ -33,6 +33,11 @@ public class ArchivreController implements ArchivreApi {
   @Override
   public List<ArchivreDto> findAll() {
     return archivreService.findAll();
+  }
+
+  @Override
+  public List<ArchivreDto> findByMoisAndAnnee(String mois, String annee) {
+    return archivreService.findByMoisIntituleAndAnneeIntitule(mois, annee);
   }
 
   @Override

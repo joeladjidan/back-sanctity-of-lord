@@ -5,13 +5,14 @@ import com.joeladjidan.sanctityoflord.controller.api.UtilisateurApi;
 import com.joeladjidan.sanctityoflord.dto.ChangerMotDePasseUtilisateurDto;
 import com.joeladjidan.sanctityoflord.dto.UtilisateurDto;
 import com.joeladjidan.sanctityoflord.services.UtilisateurService;
-
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@Slf4j
 public class UtilisateurController implements UtilisateurApi {
 
   private UtilisateurService utilisateurService;

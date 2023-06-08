@@ -1,17 +1,16 @@
 package com.joeladjidan.sanctityoflord.controller;
 
-import com.joeladjidan.sanctityoflord.controller.api.ArchivreApi;
 import com.joeladjidan.sanctityoflord.controller.api.TypeEmissionApi;
-import com.joeladjidan.sanctityoflord.dto.ArchivreDto;
 import com.joeladjidan.sanctityoflord.dto.TypeEmissionDto;
-import com.joeladjidan.sanctityoflord.services.ArchivreService;
 import com.joeladjidan.sanctityoflord.services.TypeEmissionService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@Slf4j
 public class TypeEmissionController implements TypeEmissionApi {
 
   private TypeEmissionService typeEmissionService;

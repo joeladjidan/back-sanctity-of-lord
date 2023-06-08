@@ -1,7 +1,6 @@
 package com.joeladjidan.sanctityoflord.validator;
 
 import com.joeladjidan.sanctityoflord.dto.DonneeDto;
-import com.joeladjidan.sanctityoflord.dto.TypeEnseignementDto;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
@@ -22,9 +21,6 @@ public class DonneeValidator {
       errors.add("Veuillez renseigner l'intitule du type d'enseignement");
     }
     if (!StringUtils.hasLength(dto.getUrl())) {
-      errors.add("Veuillez renseigner l'intitule du type d'enseignement");
-    }
-    if (dto.getSize() == 0) {
       errors.add("Veuillez renseigner l'intitule du type d'enseignement");
     }
     return errors;

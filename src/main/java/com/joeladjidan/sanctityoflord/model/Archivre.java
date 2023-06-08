@@ -33,5 +33,18 @@ public class Archivre extends AbstractEntity {
   @JoinColumn(name = "sanctity_enseignement")
   private Enseignement enseignement;
 
+  @ManyToOne
+  @JoinColumn(name = "sanctity_mois")
+  private Mois mois;
+
+  @ManyToOne
+  @JoinColumn(name = "sanctity_annee")
+  private Annee annee;
+
+  @ManyToOne
+  @JoinColumn(name = "sanctity_donnee")
+  private Donnee donnee;
+
+
 
 }

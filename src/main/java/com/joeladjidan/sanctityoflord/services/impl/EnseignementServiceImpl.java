@@ -27,7 +27,7 @@ public class EnseignementServiceImpl implements EnseignementService {
   }
 
   @Override
-  public EnseignementDto save(EnseignementDto dto) {
+  public EnseignementDto enregistrer(EnseignementDto dto) {
     List<String> errors = EnseignementValidator.validate(dto);
     if (!errors.isEmpty()) {
       log.error("Enseignement is not valid {}", dto);
@@ -36,7 +36,7 @@ public class EnseignementServiceImpl implements EnseignementService {
 
     return EnseignementDto.fromEntity(
         enseignementRepository.save(
-                EnseignementDto.toEntity(dto)
+          EnseignementDto.toEntity(dto)
         )
     );
   }
@@ -62,8 +62,15 @@ public class EnseignementServiceImpl implements EnseignementService {
         .collect(Collectors.toList());
   }
 
+    @Override
+    public List<EnseignementDto> findByTitreMessageIntituleAndTypeEnseignementIntitule(String titreMessage, String typeEnseignement) {
+        return enseignementRepository.findByTitreMessageIntituleAndTypeEnseignementIntitule(titreMessage , typeEnseignement).stream()
+        .map(EnseignementDto::fromEntity)
+        .collect(Collectors.toList());
+    }
+
   @Override
-  public void delete(Integer id) {
+  public void supprimer(Integer id) {
     if (id == null) {
       log.error("Enseignement ID is null");
       return;

@@ -23,6 +23,9 @@ public class Enseignement extends AbstractEntity {
   @Column(name = "description")
   private String description;
 
+  @Column(name = "is_youtube")
+  private boolean isYoutube;
+
   @ManyToOne
   @JoinColumn(name = "sanctity_donnee")
   private Donnee donnee;
@@ -38,6 +41,5 @@ public class Enseignement extends AbstractEntity {
   @ManyToOne
   @JoinColumn(name = "sanctity_type_enseignement")
   private TypeEnseignement typeEnseignement;
-
 
 }

@@ -1,21 +1,14 @@
 package com.joeladjidan.sanctityoflord.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.time.Instant;
-import java.util.Date;
-import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -45,11 +38,11 @@ public class Utilisateur extends AbstractEntity {
   @Column(name = "dateDeNaissance")
   private Date dateDeNaissance;
 
-  @Column(name = "motdepasse" , length = 1000)
+  @Column(name = "motdepasse")
   private String moteDePasse;
 
   @ManyToOne
-  @JoinColumn(name = "idAdresse")
+  @JoinColumn
   private Adresse adresse;
 
   @Column(name = "photo")

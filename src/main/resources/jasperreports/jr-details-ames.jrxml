@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jr-details-ames" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="18721ebb-a49e-4d35-9a78-a825cc851800">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Times New Roman" isDefault="true" fontName="Times New Roman" fontSize="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<parameter name="nom" class="java.lang.String"/>
+	<parameter name="telephone" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="photo" class="java.lang.String"/>
+	<parameter name="prenom" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="logo1" class="java.lang.String"/>
+	<parameter name="localisation" class="java.lang.String"/>
+	<parameter name="pays" class="java.lang.String"/>
+	<parameter name="ville" class="java.lang.String"/>
+	<parameter name="civilite" class="java.lang.String"/>
+	<parameter name="codePostale" class="java.lang.String"/>
+	<parameter name="logo2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="121" splitType="Stretch">
+			<image isUsingCache="false" isLazy="true" onErrorType="Icon">
+				<reportElement x="220" y="0" width="52" height="50" uuid="cf57ee6b-1c31-437f-98d5-77ef19ba943e">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo1}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="90" width="371" height="30" uuid="afa2db8a-351b-4ccc-b405-e8ef1fffe9d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fiche individuelle de personne suivie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="70" width="330" height="40" uuid="b0f6e237-d830-45db-beea-e7bbf9bdacd7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[EGLISE SANCTITY OF THE LORD]]></text>
+			</staticText>
+			<image isUsingCache="false" isLazy="true" onErrorType="Icon">
+				<reportElement x="240" y="30" width="52" height="50" uuid="c902c8ab-efa4-4bfc-a413-3b9061480caa">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo2}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="381">
+			<textField>
+				<reportElement x="174" y="140" width="380" height="30" isRemoveLineWhenBlank="true" uuid="7d059781-7b92-46a0-a5d3-d0a90e75efbf"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="230" width="381" height="30" isRemoveLineWhenBlank="true" uuid="3c8a7d77-76ac-44dd-a083-f9b231e61def"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{telephone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="200" width="381" height="30" isRemoveLineWhenBlank="true" uuid="1452b8e7-9bcf-4dd0-bdb4-b350157a6cec"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="170" width="384" height="30" isRemoveLineWhenBlank="true" uuid="dd7985f5-c555-453d-ba4e-52863434cc7e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{prenom}]]></textFieldExpression>
+			</textField>
+			<image isLazy="true" onErrorType="Icon">
+				<reportElement x="2" y="0" width="110" height="110" uuid="9e0c7558-1961-406f-a550-ad8323ee38da"/>
+				<imageExpression><![CDATA[$P{photo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="140" width="174" height="30" backcolor="#FFFFFF" uuid="242a1cfd-5223-49aa-abec-2a8aad211926"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="173" height="30" backcolor="#FFFFFF" uuid="065d5f63-3f7a-4550-b93c-ab7c2dfa69eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prénom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="173" height="30" backcolor="#FFFFFF" uuid="e2f24eb0-7b60-43b0-9d16-a5aa498d6f96"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="230" width="173" height="30" backcolor="#FFFFFF" uuid="1ed28cf2-0bcd-4bbd-8af4-0b923a58f23a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Téléphone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="260" width="173" height="30" backcolor="#FFFFFF" uuid="3f92ee6a-6aec-483d-be04-112d13488785"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lieux :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="171" y="260" width="383" height="30" isRemoveLineWhenBlank="true" uuid="e9ab5381-2288-46bd-84aa-3c8bd69d4051"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{localisation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="290" width="173" height="30" backcolor="#FFFFFF" uuid="7c964066-4d1a-4bba-bb4e-d75c5874caf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code Postale]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="171" y="290" width="384" height="30" isRemoveLineWhenBlank="true" uuid="bf1b01d3-8d71-4efa-8a1f-1d4e833ddefd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{codePostale}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="173" height="30" backcolor="#FFFFFF" uuid="f62f4530-907f-41c0-b9c6-2de8cdc9623a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Civilité]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="110" width="381" height="30" isRemoveLineWhenBlank="true" uuid="dd2c7c7e-f61b-4b94-9803-464d69d24112"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{civilite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="350" width="384" height="30" isRemoveLineWhenBlank="true" uuid="5581f3b9-63a0-43fa-b869-208c6d5c34dd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{pays}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="320" width="173" height="30" backcolor="#FFFFFF" uuid="c36e8c35-9f85-4bcd-aaa5-e7a8761fd60f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ville]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="350" width="174" height="30" backcolor="#FFFFFF" uuid="04a46d95-dc46-4cd3-a77c-d9cc1e008ed0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pays]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="320" width="384" height="30" isRemoveLineWhenBlank="true" uuid="c763b84d-ead1-4af2-8773-c76eb8d7f041"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ville}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="226" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="130" width="150" height="20" uuid="139389de-a6e2-409b-ac16-9d88042cdf0a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sécrétariat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="145" width="100" height="18" uuid="92a96da3-5ed5-4676-9506-04eeacb1dd50"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[+337 53 86 60 34 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="159" width="102" height="19" uuid="cf9219bc-4c2e-46d4-bd43-ca30f984553d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[+337 53 14 51 12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="173" width="119" height="15" uuid="0f736e4e-3264-42ac-995e-9e2e7daf2859"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sanctity Of The Lord]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="162" width="100" height="18" uuid="9ce9aa10-2cc2-4be2-a446-ca3e64ecb502"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[facebook]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="143" width="119" height="15" uuid="5f6ef251-4fd9-4d97-9bcb-9df40379c234"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[www.anagkazo.net]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="130" width="100" height="18" uuid="4f7b88cd-3d08-4788-a413-7845f7efc4f5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Site internet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="178" width="248" height="19" uuid="856477aa-4cb4-4fc7-8459-d7c491dfbade"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5 rue henri bergson 92600 asnieres-sur-seine , FRANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="165" width="248" height="19" uuid="cedd3bb8-c0ac-4429-814b-6e5d55295858"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Siège Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="129" width="248" height="19" uuid="3b37c7be-a4c0-4440-b217-1822bc10c886"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Eglise sanctity of the lord]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="191" width="248" height="11" uuid="106cd736-8a07-425f-81f2-faf1782c3881"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Feh kesse carrefour mauritanien cité Oribat , Abidjan , COTE-D'IVOIRE]]></text>
+			</staticText>
+			<textField pattern=" d MMMM yyyy">
+				<reportElement x="291" y="0" width="262" height="22" uuid="90170b65-55ea-43a4-8245-5c2981324eeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="14.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fait à Paris le, "+new SimpleDateFormat("d MMMM yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="141" width="248" height="19" uuid="f86585d4-29f3-4549-8645-a8cb025ae934"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Association réligieuse]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="205" width="93" height="20" uuid="3d16a9cd-11da-43ec-b4a1-722d934c351d"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="503" y="205" width="43" height="20" uuid="d9e3b434-0104-42ad-af5d-5982801fad29"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" / " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="173" width="102" height="19" uuid="9a534ed8-d153-47b5-a82a-936ae6db4300"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[+225 07 02 75 66 28]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="188" width="102" height="14" uuid="1613f2b4-aaa8-4fb8-a523-ca70eb259f79"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[+225 05 44 13 85 85]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="70" width="542" height="50" uuid="b892c26c-152c-4e88-b08e-b5d621ccfac4"/>
+				<textElement>
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[MTN MONEY: +225 05 44 13 85 85
+ORANGE MONEY: +225 07 02 75 66 28
+https://www.helloasso.com/associations/association-sanctity-of-the-lord/formulaires/4/widget
+https://www.paypal.com/donate/?hosted_button_id=QKUNR9ZD6HVEG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="44" width="547" height="26" uuid="a4e4c582-1505-4838-b925-5576b16c0750"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pour tous vos dons, veuillez les faires aux numéros suivants :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="184" width="119" height="15" uuid="de6a14ce-5d44-4e08-a245-2dacf83f4515"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pro Ange Josaphat (Fils du Dieu vivant)]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

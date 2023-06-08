@@ -8,7 +8,7 @@ import java.util.List;
 
 import static com.joeladjidan.sanctityoflord.utils.Constants.TYPE_EMISSION_ENDPOINT;
 
-@Api("type-enseignement")
+@Api("type-emission")
 public interface TypeEmissionApi {
 
   @PostMapping(TYPE_EMISSION_ENDPOINT + "/create")
@@ -17,7 +17,7 @@ public interface TypeEmissionApi {
   @GetMapping(TYPE_EMISSION_ENDPOINT + "/{idTypeEmission}")
   TypeEmissionDto findById(@PathVariable("idTypeEmission") Integer id);
 
-  @GetMapping(TYPE_EMISSION_ENDPOINT + "/all")
+  @GetMapping(value = TYPE_EMISSION_ENDPOINT + "/tous", produces="application/json")
   List<TypeEmissionDto> findAll();
 
   @DeleteMapping(TYPE_EMISSION_ENDPOINT + "/delete/{idTypeEmission}")

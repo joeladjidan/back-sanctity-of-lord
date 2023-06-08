@@ -1,16 +1,12 @@
 package com.joeladjidan.sanctityoflord.services.impl;
 
 import com.joeladjidan.sanctityoflord.dto.ArchivreDto;
-import com.joeladjidan.sanctityoflord.dto.EmissionDto;
 import com.joeladjidan.sanctityoflord.exception.EntityNotFoundException;
 import com.joeladjidan.sanctityoflord.exception.ErrorCodes;
 import com.joeladjidan.sanctityoflord.exception.InvalidEntityException;
 import com.joeladjidan.sanctityoflord.repository.ArchivreRepository;
-import com.joeladjidan.sanctityoflord.repository.EmissionRepository;
 import com.joeladjidan.sanctityoflord.services.ArchivreService;
-import com.joeladjidan.sanctityoflord.services.EmissionService;
 import com.joeladjidan.sanctityoflord.validator.ArchivreValidator;
-import com.joeladjidan.sanctityoflord.validator.EmissionValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,9 +65,16 @@ public class ArchivreServiceImpl implements ArchivreService {
   @Override
   public void delete(Integer id) {
     if (id == null) {
-      log.error("Emission ID is null");
+      log.error("Archivre ID is null");
       return;
     }
     archivreRepository.deleteById(id);
+  }
+
+  @Override
+  public List<ArchivreDto> findByMoisIntituleAndAnneeIntitule(String mois, String annee) {
+    return archivreRepository.findByMoisIntituleAndAnneeIntitule(mois , annee).stream()
+    .map(ArchivreDto::fromEntity)
+    .collect(Collectors.toList());
   }
 }

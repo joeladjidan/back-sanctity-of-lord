@@ -1,0 +1,9 @@
+logging:
+    pattern:
+      file: "%d %-5level [%thread] %logger{0} : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    com.joeladjidan.sanctityoflord: INFO
+    org.hibernate: ERROR
+  file:
+    name: C:/jar/logs/application-prod.log

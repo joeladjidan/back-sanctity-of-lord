@@ -1,17 +1,18 @@
 package com.joeladjidan.sanctityoflord.controller;
 
 import com.joeladjidan.sanctityoflord.controller.api.EmissionApi;
-import com.joeladjidan.sanctityoflord.controller.api.EntrepriseApi;
 import com.joeladjidan.sanctityoflord.dto.EmissionDto;
-import com.joeladjidan.sanctityoflord.dto.EntrepriseDto;
 import com.joeladjidan.sanctityoflord.services.EmissionService;
-import com.joeladjidan.sanctityoflord.services.EntrepriseService;
+import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Api(tags = { "Gestion des emissions" })
 @RestController
+@Slf4j
 public class EmissionController implements EmissionApi {
 
   private EmissionService emissionService;
@@ -33,7 +34,10 @@ public class EmissionController implements EmissionApi {
 
   @Override
   public List<EmissionDto> findAll() {
-    return emissionService.findAll();
+    log.info("debut recupere la liste de toute les emissions ");
+    List<EmissionDto> listEmission = emissionService.findAll();
+    log.info("fin recupere la liste de toute les emissions size {} " , listEmission.size());
+    return listEmission;
   }
 
   @Override

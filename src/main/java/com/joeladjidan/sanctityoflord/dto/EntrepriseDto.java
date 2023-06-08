@@ -1,12 +1,11 @@
 package com.joeladjidan.sanctityoflord.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.List;
-
 import com.joeladjidan.sanctityoflord.model.Entreprise;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Builder

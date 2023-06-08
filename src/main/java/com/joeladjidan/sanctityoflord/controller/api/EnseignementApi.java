@@ -11,16 +11,21 @@ import static com.joeladjidan.sanctityoflord.utils.Constants.ENSEIGNEMENT_ENDPOI
 @Api("enseignement")
 public interface EnseignementApi {
 
-  @PostMapping(ENSEIGNEMENT_ENDPOINT + "/create")
-  EnseignementDto save(@RequestBody EnseignementDto dto);
+  @PostMapping(ENSEIGNEMENT_ENDPOINT + "/enregistrer")
+  EnseignementDto enregistrer(@RequestBody EnseignementDto dto);
 
-  @GetMapping(ENSEIGNEMENT_ENDPOINT + "/{idEnseignement}")
-  EnseignementDto findById(@PathVariable("idEnseignement") Integer id);
+  @GetMapping(ENSEIGNEMENT_ENDPOINT + "/{id}")
+  EnseignementDto findById(@PathVariable("id") Integer id);
 
-  @GetMapping(ENSEIGNEMENT_ENDPOINT + "/all")
+  @GetMapping(value = ENSEIGNEMENT_ENDPOINT + "/tous", produces="application/json")
   List<EnseignementDto> findAll();
 
-  @DeleteMapping(ENSEIGNEMENT_ENDPOINT + "/delete/{idEnseignement}")
-  void delete(@PathVariable("idEnseignement") Integer id);
+  @GetMapping(ENSEIGNEMENT_ENDPOINT + "/search/{titreMessage}/{typeEnregistrement}")
+  List<EnseignementDto> findByTitreMessageAndTypeEnseignement(
+          @PathVariable("titreMessage") String titreMessage ,
+          @PathVariable("typeEnregistrement") String typeEnregistrement);
+
+  @DeleteMapping(ENSEIGNEMENT_ENDPOINT + "/supprimer/{id}")
+  void supprimer(@PathVariable("id") Integer id);
 
 }

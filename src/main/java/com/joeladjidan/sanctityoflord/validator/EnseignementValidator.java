@@ -16,13 +16,13 @@ public class EnseignementValidator {
       errors.addAll(TypeEmissionValidator.validate(null));
       return errors;
     }
-    if (!StringUtils.hasLength(dto.getTitreMessage().getIntitule())) {
+    if (StringUtils.isEmpty(dto.getTitreMessage().getIntitule())) {
         errors.addAll(TitreMessageValidator.validate(dto.getTitreMessage()));
     }
-    if (!StringUtils.hasLength(dto.getTitreMessage().getIntitule())) {
-      errors.addAll(TypeEnseignementValidator.validate(dto.getTypeEnseignement()));
+    if (StringUtils.isEmpty(dto.getTypeEnseignement().getIntitule())) {
+        errors.addAll(TypeEnseignementValidator.validate(dto.getTypeEnseignement()));
     }
-    if (!StringUtils.hasLength(dto.getTitreMessage().getIntitule())) {
+    if (StringUtils.isEmpty(dto.getTypeEmission().getIntitule())) {
         errors.addAll(TypeEmissionValidator.validate(dto.getTypeEmission()));
     }
     return errors;

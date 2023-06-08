@@ -1,10 +1,10 @@
 package com.joeladjidan.sanctityoflord.dto;
 
+import com.joeladjidan.sanctityoflord.model.Adresse;
 import com.joeladjidan.sanctityoflord.model.Artiste;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.Instant;
 import java.util.Date;
 
 @Data
@@ -16,7 +16,7 @@ public class ArtisteDto {
   private String email;
   private Date dateDeNaissance;
   private String photo;
-  private AdresseDto adresse;
+  private Adresse adresse;
 
   public static ArtisteDto fromEntity(Artiste artiste) {
     if (artiste == null) {

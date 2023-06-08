@@ -6,11 +6,13 @@ import java.util.List;
 
 public interface EnseignementService {
 
-  EnseignementDto save(EnseignementDto dto);
-
-  EnseignementDto findById(Integer id);
+  void supprimer(Integer id);
 
   List<EnseignementDto> findAll();
 
-  void delete(Integer id);
+  List<EnseignementDto> findByTitreMessageIntituleAndTypeEnseignementIntitule(String titreMessage  , String typeEnseignement);
+
+  EnseignementDto findById(Integer id);
+
+  EnseignementDto enregistrer(EnseignementDto dto);
 }

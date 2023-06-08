@@ -1,29 +1,34 @@
 package com.joeladjidan.sanctityoflord.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.joeladjidan.sanctityoflord.model.Donnee;
-import com.joeladjidan.sanctityoflord.model.Emission;
 import lombok.Builder;
 import lombok.Data;
+import lombok.extern.jackson.Jacksonized;
 
 import java.util.Date;
 
 @Data
 @Builder
+@Jacksonized //missing
+@JsonPOJOBuilder
 public class DonneeDto {
 
+  private Integer id;
   private Date date;
   private String fileName;
   private String url;
-  private Long size;
+  private String format;
 
   public static DonneeDto fromEntity(Donnee donnee) {
     if (donnee == null) {
         return null;
     }
     return DonneeDto.builder()
+        .id(donnee.getId())
         .url(donnee.getUrl())
         .date(donnee.getDate())
-        .size(donnee.getSize())
+        .format(donnee.getFormat())
         .fileName(donnee.getFileName())
         .build();
   }
@@ -33,9 +38,10 @@ public class DonneeDto {
         return null;
     }
     Donnee donnee = new Donnee();
+    donnee.setId(dto.getId());
     donnee.setUrl(dto.getUrl());
-    donnee.setSize(dto.getSize());
     donnee.setDate(dto.getDate());
+    donnee.setFormat(dto.getFormat());
     donnee.setFileName(dto.getFileName());
     return donnee;
   }

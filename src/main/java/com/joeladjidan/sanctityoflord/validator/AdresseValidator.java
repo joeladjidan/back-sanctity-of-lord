@@ -1,10 +1,10 @@
 package com.joeladjidan.sanctityoflord.validator;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.joeladjidan.sanctityoflord.dto.AdresseDto;
 import org.springframework.util.StringUtils;
 
-import com.joeladjidan.sanctityoflord.dto.AdresseDto;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdresseValidator {
 

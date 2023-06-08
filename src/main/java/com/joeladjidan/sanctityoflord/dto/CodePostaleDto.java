@@ -1,14 +1,18 @@
 package com.joeladjidan.sanctityoflord.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.joeladjidan.sanctityoflord.model.CodePostale;
-import com.joeladjidan.sanctityoflord.model.Pays;
 import lombok.Builder;
 import lombok.Data;
+import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
+@Jacksonized //missing
+@JsonPOJOBuilder
 public class CodePostaleDto {
 
+  private int id;
   private String code;
   private String description;
 
@@ -18,6 +22,7 @@ public class CodePostaleDto {
     }
 
     return CodePostaleDto.builder()
+        .id(codePostale.getId())
         .code(codePostale.getCode())
         .description(codePostale.getDescription())
         .build();
@@ -28,6 +33,7 @@ public class CodePostaleDto {
         return null;
     }
       CodePostale codePostale = new CodePostale();
+      codePostale.setId(dto.getId());
       codePostale.setCode(dto.getCode());
       codePostale.setDescription(dto.getDescription());
     return codePostale;

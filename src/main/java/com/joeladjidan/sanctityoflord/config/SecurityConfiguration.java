@@ -1,7 +1,6 @@
 package com.joeladjidan.sanctityoflord.config;
 
-import java.util.Arrays;
-import java.util.Collections;
+import com.joeladjidan.sanctityoflord.services.auth.ApplicationUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +18,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import com.joeladjidan.sanctityoflord.services.auth.ApplicationUserDetailsService;
+import java.util.Arrays;
+import java.util.Collections;
 
 @EnableWebSecurity(debug = false)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -59,7 +59,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "/**/utilisateurs/**",
             "/**/galerie/**",
             "/**/archivre/**",
+            "/**/contact/**",
+            "/**/annonce/**",
+            "/**/civilite/**",
+            "/**/fichier/**",
+            "/**/ames/**",
+            "/**/mois/**",
+            "/**/annee/**",
+            "/**/pays/**",
+            "/**/ville/**",
             "/**/donnee/**",
+            "/**/code-postale/**",
             "/**/titre-message/**",
             "/**/enseignement/**",
             "/**/type-enseignement/**",
@@ -67,7 +77,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "/**/emission/**",
             "/**/archives/**",
             "/v2/api-docs",
-            "/swagger-resources",
             "/swagger-resources/**",
             "/configuration/ui",
             "/configuration/security",
@@ -83,11 +92,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 // Used by spring security if CORS is enabled.
   @Bean
-  public CorsFilter corsFilter() {
+  public CorsFilter corsFilter()
+  {
     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     final CorsConfiguration config = new CorsConfiguration();
     config.setAllowCredentials(true);
-    // Don't do this in production, use a proper list  of allowed origins
     config.setAllowedOriginPatterns(Collections.singletonList("*"));
     config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization", "RefreshToken"));
     config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "OPTIONS", "DELETE", "PATCH"));

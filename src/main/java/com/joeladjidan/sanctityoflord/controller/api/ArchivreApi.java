@@ -14,13 +14,18 @@ public interface ArchivreApi {
   @PostMapping(ARCHIVRE_ENDPOINT + "/create")
   ArchivreDto save(@RequestBody ArchivreDto dto);
 
-  @GetMapping(ARCHIVRE_ENDPOINT + "/{idArchivre}")
-  ArchivreDto findById(@PathVariable("idArchivre") Integer id);
+  @GetMapping(ARCHIVRE_ENDPOINT + "/{id}")
+  ArchivreDto findById(@PathVariable("id") Integer id);
 
-  @GetMapping(ARCHIVRE_ENDPOINT + "/all")
+  @GetMapping(value = ARCHIVRE_ENDPOINT + "/tous", produces="application/json")
   List<ArchivreDto> findAll();
 
-  @DeleteMapping(ARCHIVRE_ENDPOINT + "/delete/{idArchivre}")
-  void delete(@PathVariable("idArchivre") Integer id);
+  @GetMapping(ARCHIVRE_ENDPOINT + "/search/{mois}/{annee}")
+  List<ArchivreDto> findByMoisAndAnnee(
+          @PathVariable("mois") String mois ,
+          @PathVariable("annee") String annee);
+
+  @DeleteMapping(ARCHIVRE_ENDPOINT + "/delete/{id}")
+  void delete(@PathVariable("id") Integer id);
 
 }

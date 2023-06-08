@@ -1,36 +1,34 @@
 package com.joeladjidan.sanctityoflord.controller.api;
 
 
+import com.joeladjidan.sanctityoflord.dto.ChangerMotDePasseUtilisateurDto;
+import com.joeladjidan.sanctityoflord.dto.UtilisateurDto;
 import io.swagger.annotations.Api;
-
-import static com.joeladjidan.sanctityoflord.utils.Constants.UTILISATEUR_ENDPOINT;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.*;
-
-import com.joeladjidan.sanctityoflord.dto.ChangerMotDePasseUtilisateurDto;
-import com.joeladjidan.sanctityoflord.dto.UtilisateurDto;
+import static com.joeladjidan.sanctityoflord.utils.Constants.UTILISATEUR_ENDPOINT;
 
 @Api("utilisateurs")
 public interface UtilisateurApi {
 
-  @PostMapping(UTILISATEUR_ENDPOINT + "/create")
+  @PostMapping(UTILISATEUR_ENDPOINT + "/enregistrer")
   UtilisateurDto save(@RequestBody UtilisateurDto dto);
 
   @PostMapping(UTILISATEUR_ENDPOINT + "/update/password")
   UtilisateurDto changerMotDePasse(@RequestBody ChangerMotDePasseUtilisateurDto dto);
 
-  @GetMapping(UTILISATEUR_ENDPOINT + "/{idUtilisateur}")
-  UtilisateurDto findById(@PathVariable("idUtilisateur") Integer id);
+  @GetMapping(UTILISATEUR_ENDPOINT + "/{id}")
+  UtilisateurDto findById(@PathVariable("id") Integer id);
 
   @GetMapping(UTILISATEUR_ENDPOINT + "/find/{email}")
   UtilisateurDto findByEmail(@PathVariable("email") String email);
 
-  @GetMapping(UTILISATEUR_ENDPOINT + "/all")
+  @GetMapping(value = UTILISATEUR_ENDPOINT + "/tous", produces="application/json")
   List<UtilisateurDto> findAll();
 
-  @DeleteMapping(UTILISATEUR_ENDPOINT + "/delete/{idUtilisateur}")
-  void delete(@PathVariable("idUtilisateur") Integer id);
+  @DeleteMapping(UTILISATEUR_ENDPOINT + "/delete/{id}")
+  void delete(@PathVariable("id") Integer id);
 
 }

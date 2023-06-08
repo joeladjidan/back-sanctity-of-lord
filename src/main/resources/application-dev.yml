@@ -1,0 +1,10 @@
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    com.joeladjidan.sanctityoflord: DEBUG
+    org.hibernate: ERROR
+  file:
+    name: C:/jar/logs/application-dev.log

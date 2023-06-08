@@ -1,4 +1,12 @@
 spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: 'true'
+      max-request-size: 215MB
+      file-size-threshold: 2KB
+      max-file-size: 200MB
   main:
     allow-circular-references: true
   datasource:
@@ -12,8 +20,8 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        session_factory:
-          interceptor: com.joeladjidan.sanctityoflord.interceptor.Interceptor
+       # session_factory:
+       #   interceptor: com.joeladjidan.sanctityoflord.interceptor.Interceptor
 
     # Hibernate DDL Auto (create, create-drop, update)
     hibernate:
@@ -30,14 +38,15 @@ flickr:
 jwt:
   header: Authorization
   secret: secret
-  jwtExpirationInMs: 18000000
+  jwtExpirationInMs: 28000000
   refreshExpirationDateInMs: 600000000
   route:
     authentication:
       path: auth
       refresh: refresh
 server:
-  port: 8081
+  port: 8080
+  context-path: /anagkazo
   error:
     include-message: always
     include-binding-errors: always
@@ -57,12 +66,14 @@ servlet:
      file-size-threshold: 2KB
      max-file-size: 200MB
 
-logging:
-   level:
-     org:
-       hibernate:
-         SQL:
-           INFO
-         TYPE:
-           TRACE
-
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: joeladjidan@gmail.com
+  password: Ines26031986*
+  protocol: smtp
+  tls: true
+  properties.mail.smtp:
+    auth: true
+    starttls.enable: true
+    ssl.trust: smtp.gmail.com

@@ -1,7 +1,6 @@
 package com.joeladjidan.sanctityoflord.dto;
 
 import com.joeladjidan.sanctityoflord.model.Adresse;
-import com.joeladjidan.sanctityoflord.model.CodePostale;
 import lombok.Builder;
 import lombok.Data;
 

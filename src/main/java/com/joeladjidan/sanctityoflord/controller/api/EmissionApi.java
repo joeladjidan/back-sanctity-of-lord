@@ -11,16 +11,16 @@ import static com.joeladjidan.sanctityoflord.utils.Constants.EMISSION_ENDPOINT;
 @Api("emission")
 public interface EmissionApi {
 
-  @PostMapping(EMISSION_ENDPOINT + "/create")
+  @PostMapping(EMISSION_ENDPOINT + "/enregistrer")
   EmissionDto save(@RequestBody EmissionDto dto);
 
-  @GetMapping(EMISSION_ENDPOINT + "/{idEmission}")
-  EmissionDto findById(@PathVariable("idEmission") Integer id);
+  @GetMapping(EMISSION_ENDPOINT + "/{id}")
+  EmissionDto findById(@PathVariable("id") Integer id);
 
-  @GetMapping(EMISSION_ENDPOINT + "/all")
+  @GetMapping(value = EMISSION_ENDPOINT + "/tous", produces="application/json")
   List<EmissionDto> findAll();
 
-  @DeleteMapping(EMISSION_ENDPOINT + "/delete/{idEmission}")
-  void delete(@PathVariable("idEmission") Integer id);
+  @DeleteMapping(EMISSION_ENDPOINT + "/supprimer/{id}")
+  void delete(@PathVariable("id") Integer id);
 
 }
